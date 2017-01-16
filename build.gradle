@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'eclipse'
+    id 'org.springframework.boot' version '1.4.3.RELEASE'
+}
+
+group 'com.teamtreehouse'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+
+}
