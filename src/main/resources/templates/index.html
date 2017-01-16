@@ -14,34 +14,10 @@
     </div>
 </header>
 <div class="container">
-    <div class="country">
-        <a href="urugay.html">
-            <img th:src="@{/flags/uruguay.png}" alt="Flag of Uruguay"/>
-            <h4>Uruguay</h4>
-        </a>
-    </div>
-    <div class="country">
-        <a href="cameroon.html">
-            <img th:src="@{/flags/cameroon.png}" alt="Flag of Cameroon"/>
-            <h4>Cameroon</h4>
-        </a>
-    </div>
-    <div class="country">
-        <a href="brazil.html">
-            <img th:src="@{/flags/brazil.png}" alt="Flag of Brazil"/>
-            <h4>Brazil</h4>
-        </a>
-    </div>
-    <div class="country">
-        <a href="mexico.html">
-            <img th:src="@{/flags/mexico.png}" alt="Flag of Mexico"/>
-            <h4>Mexico</h4>
-        </a>
-    </div>
-    <div class="country">
-        <a href="hungary.html">
-            <img th:src="@{/flags/hungary.png}" alt="Flag of Hungary"/>
-            <h4>Hungary</h4>
+    <div th:each="country : ${countries}" class="country">
+        <a th:href="@{'/country/' + ${country.name}}">
+            <img th:src="@{'/flags/' + ${country.name} + '.png'}" th:alt="@{Flag of + ${country.name}}"/>
+            <h4 th:text="${country.name}">Country</h4>
         </a>
     </div>
 </div>
