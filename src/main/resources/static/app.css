@@ -1,0 +1,142 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700);
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab', serif;
+}
+
+header {
+    background-color: #000;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    padding: 10px 0;
+    font-weight: 300;
+    text-transform: lowercase;
+}
+
+header h1 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.container {
+    margin: 0;
+    padding: 10px;
+}
+
+.country {
+    box-sizing: border-box;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 4px #ccc;
+    width: 45%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.country h4 {
+    text-align: center;
+    margin: 12px 0 4px 0;
+    font-weight: 300;
+    font-size: 1.6rem;
+}
+
+.country:nth-child(2n+1) {
+    margin-right: 8%;
+}
+
+.country a {
+    color: #444;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.country-details h2 {
+    text-transform: uppercase;
+    color: #444;
+    font-size: 3rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dedede;
+}
+
+.country-details .meta .stat {
+    margin-bottom: 20px;
+}
+
+.country-details .meta .stat h4 {
+    font-size: 1.8rem;
+    margin: 0 0 10px;
+    font-weight: 400;
+}
+
+.country-details .meta {
+    font-size: 1.3rem;
+    font-weight: 300;
+}
+
+.country-details .flag {
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 4px #ccc;
+}
+
+.country-details .flag::after {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+.country-details .meta ul {
+    margin-top: 0;
+    padding-left: 0px;
+}
+
+.country-details .meta ul {
+    list-style: none;
+}
+
+.country-details .meta ul li::before {
+    content:"\2713\0020";
+    color: #65AB8A;
+}
+
+@media screen and (min-width: 601px) {
+    header {
+        text-align: left;
+    }
+    .container {
+        max-width: 800px;
+        margin:0 auto;
+    }
+
+    .country-details h2 {
+        border-bottom: none;
+        font-size: 4rem;
+    }
+
+    .country-details .meta {
+        width: 65%;
+        float: left;
+    }
+
+    .country-details .meta .stat {
+        float: left;
+        width: 50%;
+    }
+
+    .country-details .flag {
+        float: right;
+        width: 35%;
+    }
+}
