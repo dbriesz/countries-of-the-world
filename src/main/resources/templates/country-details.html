@@ -10,7 +10,7 @@
 <body>
 <header>
     <div class="container">
-        <h1><a href="index.html">Countries of the World</a></h1>
+        <h1><a th:href="@{/}">Countries of the World</a></h1>
     </div>
 </header>
 <div class="container">
@@ -19,7 +19,7 @@
         <div class="meta">
             <div class="stat">
                 <h4>Population</h4>
-                <span th:text="${country.population}">population</span>
+                <span th:text="${country.population}">Population</span>
             </div>
             <div class="stat">
                 <h4>Capital</h4>
@@ -28,7 +28,7 @@
             <div class="stat">
                 <h4>Official Languages</h4>
                 <ul>
-                    <li th:text="${country.languages}"></li>
+                    <li th:each="language : ${country.languages}" th:text="${language}"></li>
                 </ul>
             </div>
         </div>

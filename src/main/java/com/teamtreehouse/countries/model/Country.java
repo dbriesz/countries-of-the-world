@@ -27,8 +27,10 @@ public class Country {
         this.name = name;
     }
 
-    public int getPopulation() {
-        return population;
+    public String getPopulation() {
+        String populationAsStr;
+        populationAsStr = NumberFormat.getNumberInstance(Locale.US).format(population);
+        return populationAsStr;
     }
 
     public void setPopulation(int population) {
@@ -43,13 +45,8 @@ public class Country {
         this.capital = capital;
     }
 
-    public String getLanguages() {
-        StringJoiner joiner = new StringJoiner(", ");
-        for(String language : languages) {
-           joiner.add(language);
-        }
-        String languagesToStr = joiner.toString();
-        return languagesToStr;
+    public List<String> getLanguages() {
+        return languages;
     }
 
     public void setLanguages(List<String> languages) {
