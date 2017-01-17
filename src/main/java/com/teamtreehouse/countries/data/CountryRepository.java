@@ -4,7 +4,9 @@ import com.teamtreehouse.countries.model.Country;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class CountryRepository {
@@ -27,5 +29,10 @@ public class CountryRepository {
 
     public List<Country> getAllCountries() {
         return ALL_COUNTRIES;
+    }
+
+    public List<Country> sortByPopulation() {
+        List<Country> sortedPopulation = ALL_COUNTRIES.stream().sorted((c1, c2) -> c1.getPopulationAsInt() - c2.getPopulationAsInt()).collect(Collectors.toList());
+        return sortedPopulation;
     }
 }

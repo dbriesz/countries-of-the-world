@@ -23,6 +23,13 @@ public class CountryController {
         return "index";
     }
 
+    @RequestMapping(value = "/?sort=population")
+    public String listCountriesByPopulation(ModelMap modelMap) {
+        List<Country> countriesByPop = countryRepository.sortByPopulation();
+        modelMap.put("?sort=population",countriesByPop);
+        return "?sort=population";
+    }
+
     @RequestMapping("/country/{name}")
     public String countryDetails(@PathVariable String name, ModelMap modelMap) {
         Country country = countryRepository.findByName(name);

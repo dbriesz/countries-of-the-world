@@ -13,6 +13,9 @@
         <h1><a th:href="@{/}">Countries of the World</a></h1>
     </div>
 </header>
+
+    <a th:href="@{/?sort=population}">Sort By Population</a>
+
 <div class="container">
     <div th:each="country : ${countries}" class="country">
         <a th:href="@{'/country/' + ${country.name}}">

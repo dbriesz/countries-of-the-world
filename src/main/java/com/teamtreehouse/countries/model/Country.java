@@ -33,6 +33,10 @@ public class Country {
         return populationAsStr;
     }
 
+    public int getPopulationAsInt() {
+        return population;
+    }
+
     public void setPopulation(int population) {
         this.population = population;
     }
@@ -51,5 +55,27 @@ public class Country {
 
     public void setLanguages(List<String> languages) {
         this.languages = languages;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Country country = (Country) o;
+
+        if (population != country.population) return false;
+        if (name != null ? !name.equals(country.name) : country.name != null) return false;
+        if (capital != null ? !capital.equals(country.capital) : country.capital != null) return false;
+        return languages != null ? languages.equals(country.languages) : country.languages == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + population;
+        result = 31 * result + (capital != null ? capital.hashCode() : 0);
+        result = 31 * result + (languages != null ? languages.hashCode() : 0);
+        return result;
     }
 }
