@@ -5,7 +5,7 @@
 
     <link rel="stylesheet" th:href="@{/app.css}" />
 
-    <title>Uruguay</title>
+    <title th:text="${country.name}">Country</title>
 </head>
 <body>
 <header>
@@ -15,25 +15,25 @@
 </header>
 <div class="container">
     <div class="country-details">
-        <h2>Uruguay</h2>
+        <h2 th:text="${country.name}">Country</h2>
         <div class="meta">
             <div class="stat">
                 <h4>Population</h4>
-                <span>3,351,016</span>
+                <span th:text="${country.population}">population</span>
             </div>
             <div class="stat">
                 <h4>Capital</h4>
-                <span>Montevideo</span>
+                <span th:text="${country.capital}"></span>
             </div>
             <div class="stat">
                 <h4>Official Languages</h4>
                 <ul>
-                    <li>Spanish</li>
+                    <li th:text="${country.languages}"></li>
                 </ul>
             </div>
         </div>
         <div class="flag">
-            <img src="flags/uruguay.png" alt="Flag of Uruguay"/>
+            <img th:src="@{'/flags/' + ${country.name} + '.png'}" th:alt="@{Flag of + ${country.name}}"/>
         </div>
     </div>
 </div>

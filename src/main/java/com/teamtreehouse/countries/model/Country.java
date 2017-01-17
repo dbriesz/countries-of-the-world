@@ -1,7 +1,10 @@
 package com.teamtreehouse.countries.model;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.StringJoiner;
 
 public class Country {
     private String name;
@@ -40,8 +43,13 @@ public class Country {
         this.capital = capital;
     }
 
-    public List<String> getLanguages() {
-        return languages;
+    public String getLanguages() {
+        StringJoiner joiner = new StringJoiner(", ");
+        for(String language : languages) {
+           joiner.add(language);
+        }
+        String languagesToStr = joiner.toString();
+        return languagesToStr;
     }
 
     public void setLanguages(List<String> languages) {
