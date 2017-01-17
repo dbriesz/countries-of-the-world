@@ -14,7 +14,7 @@
     </div>
 </header>
 
-    <a th:href="@{/?sort=population}">Sort By Population</a>
+    <a th:href="@{/(sort='population')}">Sort By Population</a>
 
 <div class="container">
     <div th:each="country : ${countries}" class="country">
