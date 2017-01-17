@@ -18,7 +18,7 @@ public class CountryController {
     private CountryRepository countryRepository;
 
     @RequestMapping("/")
-    public String listCountries(@RequestParam("sort") String sort, ModelMap modelMap) {
+    public String listCountries(@RequestParam(name = "sort", defaultValue = "", required = false) String sort, ModelMap modelMap) {
         List<Country> countries;
         if (sort.equals("population")) {
             countries = countryRepository.sortByPopulation();
