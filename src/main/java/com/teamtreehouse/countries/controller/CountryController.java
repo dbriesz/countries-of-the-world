@@ -20,10 +20,16 @@ public class CountryController {
     @RequestMapping("/")
     public String listCountries(@RequestParam(name = "sort", defaultValue = "", required = false) String sort, ModelMap modelMap) {
         List<Country> countries;
-        if (sort.equals("population")) {
-            countries = countryRepository.sortByPopulation();
-        } else {
-            countries = countryRepository.getAllCountries();
+        switch (sort) {
+            case "population":
+                countries = countryRepository.sortByPopulation();
+                break;
+            case "alphabetical":
+                countries = countryRepository.sortByName();
+                break;
+            default:
+                countries = countryRepository.getAllCountries();
+                break;
         }
         modelMap.put("countries",countries);
         return "index";

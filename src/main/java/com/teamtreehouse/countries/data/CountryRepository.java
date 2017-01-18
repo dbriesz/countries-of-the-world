@@ -30,6 +30,11 @@ public class CountryRepository {
         return ALL_COUNTRIES;
     }
 
+    public List<Country> sortByName() {
+        List<Country> sortedAlphabetical = ALL_COUNTRIES.stream().sorted((c1, c2) -> c1.getName().compareTo(c2.getName())).collect(Collectors.toList());
+        return sortedAlphabetical;
+    }
+
     public List<Country> sortByPopulation() {
         List<Country> sortedPopulation = ALL_COUNTRIES.stream().sorted((c1, c2) -> c1.getPopulationAsInt() - c2.getPopulationAsInt()).collect(Collectors.toList());
         return sortedPopulation;
