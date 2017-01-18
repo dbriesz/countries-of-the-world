@@ -35,9 +35,7 @@ header h1 a {
     font-weight: bold;
     font-size: 13px;
     font-family: 'Roboto Slab', sans-serif;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 30px;
+    margin: 10px 10px 10px 10px;
 }
 
 .button.primary {
